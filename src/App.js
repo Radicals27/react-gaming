@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import ReactDOM from 'react-dom';
 import GoogleLogin from "react-google-login"
 
 export default function App() {
@@ -24,7 +25,8 @@ export default function App() {
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
         cookiePolicy={"single_host_origin"}
-      />
+      />     
     </div>
   )
 }
+
