@@ -1,14 +1,16 @@
-import React from 'react';
-import './App.css';
-import Search from './Search'
+import React, { useState } from "react"
+import ReactDOM from 'react-dom'
+import './App.css'
+import GoogleLogin from "react-google-login"
 import HomePage from './HomePage'
 
-function App() {
-  return (
-    <div>
-      <HomePage/>
-    </div>
-  );
-}
+import Search from './Search'
 
-export default App;
+export default function App() {
+    return (
+        <div class="App-header">
+            Welcome to REACT-GAMING!
+            <HomePage/>
+        </div>
+    )
+}
