@@ -19,3 +19,20 @@ The target audience will be gamers (of any major platform or age) who are seriou
 The site features a full MERN stack utilising MongoDB for the user database, Express for the back-end, REACT for the front-end and Node.js for the runtime environment.
  
 The entire project is written in JS, and utilises GitHub for version control.
+
+## Application Architecture Diagram
+![Application Architecture Diagram](Architect_Diagram.png)
+
+## Data Flow Diagram
+
+## Wireframes
+
+## Trello Board
+
+Link: 
+
+https://trello.com/b/aRXRFprr/react-gaming
+
+Screenshots:
+
+![Trello Image 1](Trello01.png)
