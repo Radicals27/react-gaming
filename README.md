@@ -25,7 +25,19 @@ The entire project is written in JS, and utilises GitHub for version control.
 
 ## Data Flow Diagram
 
+![](docs/rawgApi.png)
+
+![](docs/userData.png)
+
 ## Wireframes
+
+![](docs/wireframeDesktop1.png)
+
+![](docs/wireframeDesktop2.png)
+
+![](docs/wireframeMobile1.png)
+
+![](docs/wireframeMobile2.png)
 
 ## Trello Board
 
