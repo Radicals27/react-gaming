@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import './search.css'
 
-export default function App() { 
+export default function App() {
     const [state, setState] = React.useState({
         Scifi: false,
         Action: false,
@@ -16,9 +17,9 @@ export default function App() {
         setState(s => ({ ...s, [target.name]: !s[target.name] }))
 
     return (
-        <div>
+        <div className="checkboxContainer">
             {Object.keys(state).map(key => (
-                <label>{key}
+                <label className="label">{key}
                     <input
                         type="checkbox"
                         onChange={handleToggle}

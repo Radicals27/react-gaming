@@ -8,10 +8,14 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.0",
     "express": "^4.17.1",
-    "nodemon": "^2.0.4",
+    "express-handlebars": "^5.1.0",
+    "forever": "^3.0.0",
+    "mdbreact": "^4.27.0",
     "passport": "^0.4.1",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.2.2",
     "react-dom": "^16.13.1",
     "react-google-login": "^5.1.21",
     "react-scripts": "3.4.1"
@@ -21,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "express-server": "forever -c \"nodemon --exitcrash -L\" Express.jsx"
+    "node-server": "forever --minUptime 5000 --spinSleepTime 3000 -c \"nodemon --exitcrash -L\" src/Server.js",
+    "express-server": "forever --minUptime 5000 --spinSleepTime -c \"nodemon --exitcrash -L\" src/Express.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
