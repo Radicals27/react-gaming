@@ -4,10 +4,12 @@ import './index.css'
 import App from './App'
 import Search from './Search'
 import Login from './Login'
+import Navbar from './Navbar'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
   <React.StrictMode>
+    <Navbar />
     <App />
     <Search />
     <Login />

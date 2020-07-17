@@ -1,0 +1,9 @@
+.checkboxContainer {
+    text-align: center;
+    background-color: #333;
+}
+
+.checkboxContainer .label {
+    color: white;
+    padding-left: 20px;
+}

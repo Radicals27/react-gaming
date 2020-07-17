@@ -10,7 +10,7 @@ export default function App() {
     return (
         <div class="App-header">
             Welcome to REACT-GAMING!
-            <HomePage/>
+            <HomePage />
         </div>
     )
 }
