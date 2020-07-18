@@ -21,11 +21,23 @@ The site features a full MERN stack utilising MongoDB for the user database, Exp
 The entire project is written in JS, and utilises GitHub for version control.
 
 ## Application Architecture Diagram
-![Application Architecture Diagram](Architect_Diagram.png)
+![Application Architecture Diagram](docs/Architect_Diagram.png)
 
 ## Data Flow Diagram
 
+![](docs/rawgApi.png)
+
+![](docs/userData.png)
+
 ## Wireframes
+
+![](docs/wireframeDesktop1.png)
+
+![](docs/wireframeDesktop2.png)
+
+![](docs/wireframeMobile1.png)
+
+![](docs/wireframeMobile2.png)
 
 ## Trello Board
 
@@ -35,4 +47,4 @@ https://trello.com/b/aRXRFprr/react-gaming
 
 Screenshots:
 
-![Trello Image 1](Trello01.png)
+![Trello Image 1](docs/Trello01.png)
