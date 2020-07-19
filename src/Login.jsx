@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import ReactDOM from 'react-dom'
-import './login.css'
+import './styles/login.css'
 import GoogleLogin from "react-google-login"
 
 export default function App() {
