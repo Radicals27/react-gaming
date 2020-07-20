@@ -30,9 +30,6 @@
     "eject": "react-scripts eject",
     "proxy": "https://react-gaming-backend.herokuapp.com",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
-  },
-  "node-server": "forever --minUptime 5000 --spinSleepTime 3000 -c \"nodemon --exitcrash -L\" src/Server.js",
-  "express-server": "forever --minUptime 5000 --spinSleepTime -c \"nodemon --exitcrash -L\" src/Express.js"
 },
 "eslintConfig": {
   "extends": "react-app"
