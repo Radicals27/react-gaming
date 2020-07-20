@@ -29,29 +29,30 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "proxy": "https://react-gaming-backend.herokuapp.com",
-    "heroku-postbuild": "npm install && npm run build",
-    "node-server": "forever --minUptime 5000 --spinSleepTime 3000 -c \"nodemon --exitcrash -L\" src/Server.js",
-    "express-server": "forever --minUptime 5000 --spinSleepTime -c \"nodemon --exitcrash -L\" src/Express.js"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "engines": {
-    "node": "12.x"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+  "node-server": "forever --minUptime 5000 --spinSleepTime 3000 -c \"nodemon --exitcrash -L\" src/Server.js",
+  "express-server": "forever --minUptime 5000 --spinSleepTime -c \"nodemon --exitcrash -L\" src/Express.js"
+},
+"eslintConfig": {
+  "extends": "react-app"
+},
+"engines": {
+  "node": "12.x"
+},
+"browserslist": {
+  "production": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ]
+},
+"devDependencies": {
+  "nodemon": "^2.0.4"
+}
 }
