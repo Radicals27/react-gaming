@@ -28,6 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "proxy": "http://localhost:5000",
     "node-server": "forever --minUptime 5000 --spinSleepTime 3000 -c \"nodemon --exitcrash -L\" src/Server.js",
     "express-server": "forever --minUptime 5000 --spinSleepTime -c \"nodemon --exitcrash -L\" src/Express.js"
   },
