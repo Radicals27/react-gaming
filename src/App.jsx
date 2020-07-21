@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import './styles/App.css'
 import GoogleLogin from "react-google-login"
 import HomePage from './HomePage'
-import Search from './Search'
 import Axios from "axios"
 
 export default function App() {
@@ -11,7 +10,6 @@ export default function App() {
         event.preventDefault()
         Axios.get('https://react-gaming-backend.herokuapp.com/ping')
             .then(res => console.log(res))
-
     }
 
     return (

@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 
 import './styles/homepagecard.css'
+import './search.css'
 
 const useStyles = makeStyles({
     root: {
@@ -27,13 +28,26 @@ export default function HomePageCard() {
     }
 
     const [games, setGames] = useState([])
+    // Set up the checkboxes for filtering games
+    const [checked, setChecked] = React.useState({
+        PC: false,
+        PlayStation: false,
+        Xbox: false,
+        Nintendo: false,
 
-    // useEffect(() => {
-    //     fetch('/users')
-    //         .then(res => console.log(res)) })
-    //     axios.get(`https://api.rawg.io/api/games`)
-    //     .then(res =>{
-    //         console.log(res.data.results)
+        Action: false,
+        Strategy: false,
+        RPG: false,
+        Shooter: false,
+        Adventure: false,
+        Puzzle: false,
+        Racing: false,
+        Sports: false
+    })
+
+    //When user toggles a checkbox, update state to reflect the checked boxes
+    const handleToggle = ({ target }) =>
+        setChecked(s => ({ ...s, [target.name]: !s[target.name] }))
 
     axios.get('https://react-gaming-backend.herokuapp.com/')
         .then(gamesList => {
@@ -42,6 +56,19 @@ export default function HomePageCard() {
 
     return (
         <Card>
+            <div className="checkboxContainer">
+                {Object.keys(checked).map(key => (
+                    <label className="label">{key}
+                        <input
+                            type="checkbox"
+                            onChange={handleToggle}
+                            key={key}
+                            name={key}
+                            checked={checked[key]}
+                        />
+                    </label>
+                ))}
+            </div>
             {games.map(game => (
                 <CardActionArea key={games.id}>
                     <div>
