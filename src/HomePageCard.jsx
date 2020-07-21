@@ -37,8 +37,8 @@ export default function HomePageCard() {
 
     // setGames(axios.get('http://react-gaming-backend.herokuapp.com'))
     //console.log(axios.get('http://react-gaming-backend.herokuapp.com/'))
-    console.log(axios.get('http://localhost:4000/'))
-    axios.get('http://localhost:4000/')
+    //console.log(axios.get('http://localhost:4000/'))
+    axios.get('http://react-gaming-backend.herokuapp.com/')
         .then(gamesList => {
             setGames(gamesList.data)
         })
