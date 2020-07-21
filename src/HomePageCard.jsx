@@ -28,15 +28,20 @@ export default function HomePageCard() {
 
     const [games, setGames] = useState([])
 
-    useEffect(() => {
-        fetch('/users')
-            .then(res => console.log(res)) })
-    // axios.get(`https://api.rawg.io/api/games`)
+    // useEffect(() => {
+    //     fetch('/users')
+    //         .then(res => console.log(res)) })
+    //     axios.get(`https://api.rawg.io/api/games`)
     //     .then(res =>{
     //         console.log(res.data.results)
-    //         setGames(res.data.results)
-    //     })
-    // }, [])
+
+    // setGames(axios.get('http://react-gaming-backend.herokuapp.com'))
+    //console.log(axios.get('http://react-gaming-backend.herokuapp.com/'))
+    //console.log(axios.get('http://localhost:4000/'))
+    axios.get('http://react-gaming-backend.herokuapp.com/')
+        .then(gamesList => {
+            setGames(gamesList.data)
+        })
 
     return (
         <Card>
