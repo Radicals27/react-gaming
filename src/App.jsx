@@ -9,7 +9,7 @@ import Axios from "axios"
 export default function App() {
     const handleClick = (event) => {
         event.preventDefault()
-        Axios.get('http://localhost:4000/ping') 
+        Axios.get('https://react-gaming-backend.herokuapp.com/ping') 
             .then(res => console.log(res))
 
     }
