@@ -9,16 +9,16 @@ import Axios from "axios"
 export default function App() {
     const handleClick = (event) => {
         event.preventDefault()
-        Axios.get('https://react-gaming-backend.herokuapp.com/ping') 
+        Axios.get('https://react-gaming-backend.herokuapp.com/ping')
             .then(res => console.log(res))
 
     }
 
     return (
         <div class="App-header">
-            <button onClick={handleClick}>
+            {/* <button onClick={handleClick}>
                 Click Me
-            </button>
+            </button> */}
             <HomePage />
         </div>
     )
