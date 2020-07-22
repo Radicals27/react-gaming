@@ -58,33 +58,49 @@ export default function HomePageCard() {
         setPlatforms(s => ({ ...s, [target.name]: !s[target.name] }))
     }
 
+    //Returns an array of game objects that meet the filtered criteria
+    function filterGames(gamesArray, platforms, genres) {
+        let anyCheckedBoxes = false
+
+        for (let [key, value] of Object.entries(platforms)) {
+            if (value == true)
+                anyCheckedBoxes = true
+            //use 'key' or 'value'
+        }
+        for (let [key, value] of Object.entries(genres)) {
+            if (value == true)
+                anyCheckedBoxes = true
+            //use 'key' or 'value'
+        }
+        //return all games if there are no checked boxes
+        if (!anyCheckedBoxes)
+            return gamesArray
+        
+        for (let game = 0; game < games.length; game++) {
+            
+        }
+    }
+
     useEffect(() => {
         axios.get('https://react-gaming-backend.herokuapp.com/')
-        .then(gamesList => {
-            setGames(gamesList.data)
-        })
-        console.log(games)
-        if (previousGenres != genres) {
-            console.log("Genre has changed!")
-            setPreviousGenres(genres)
-        }
-        if (previousPlatforms != platforms) {
-            console.log("Platform has changed!")
-            setPreviousPlatforms(platforms)
-        }
+            .then(gamesList => {
+                setGames(gamesList.data)
+            })
     }, [])
 
     useEffect(() => {
         console.log(games)
+        if (previousGenres != genres) {
+            console.log("Genre has changed!")
+            setPreviousGenres(genres)
+            filterGames(games, platforms, genres)
+        }
+        if (previousPlatforms != platforms) {
+            console.log("Platform has changed!")
+            setPreviousPlatforms(platforms)
+            filterGames(games, platforms, genres)
+        }
     })
-
-
-
-    //Pseudo code for filter function:
-    //If all boxes are unticked, display ALL games
-       //setGames(gamesList.data)
-    //If a checkbox is ticked, ONLY display games that match its criteria
-       //if platform == "Xbox"
 
     return (
         <Card>
@@ -113,7 +129,6 @@ export default function HomePageCard() {
                             checked={genres[key]}
                         />
                     </label>
-
                 ))}
             </div>
             {games.map(game => (
