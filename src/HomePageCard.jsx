@@ -79,26 +79,33 @@ export default function HomePageCard() {
         }
         //return all games if there are no checked boxes
         if (!anyCheckedBoxes) {
-            console.log("No checkboxes ticked!")
-            console.log(`returning ${gamesArray}`)
             return gamesArray
         }
 
         //Go through each game returned from the API
         for (let i = 0; i < games.length; i++) {
-            //Go through each platform for the game
+            //Go through each PLATFORM for the game
             for (let j = 0; j < games[i].parent_platforms.length; j++) {
                 //Check if the games platform/s include the checked platform/s
                 for (let [key, value] of Object.entries(platforms)) {
-                    //console.log(`platform.name: ${games[i].parent_platforms[j].platform.name}, key: ${key}`)
                     if (value === true && games[i].parent_platforms[j].platform.name === key && !filteredGames.includes(games[i])) {
                         filteredGames.push(games[i])
                     }
                 }
             }
         }
-        console.log("Some checkboxes ticked!")
-        console.log(`Returning: ${filteredGames}`)
+        console.log(gamesArray)
+        for (let i = 0; i < games.length; i++) {
+            //Go through each GENRE for the game
+            for (let j = 0; j < games[i].genres.length; j++) {
+                //Check if the games genre/s include the checked genres
+                for (let [key, value] of Object.entries(genres)) {
+                    if (value === true && games[i].genres[j].name === key && !filteredGames.includes(games[i])) {
+                        filteredGames.push(games[i])
+                    }
+                }
+            }
+        }
         return filteredGames
     }
 
@@ -124,7 +131,6 @@ export default function HomePageCard() {
             console.log("platform changed")
             setPreviousPlatforms(platforms)
             setGamesToDisplay(filterGames(games, platforms, genres))
-            console.log(`gamesToDisplay: ${gamesToDisplay}`)
         }
     })
 
