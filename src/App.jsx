@@ -13,12 +13,8 @@ import CookieBar from './CookieBar'
 import Navbar from "./Navbar"
 
 export default function App() {
-
     return (
         <div class="App-header">
-            {/* <button onClick={handleClick}>
-                Click Me
-            </button> */}
             <CookieBar/>
             <Navbar/>
             <Search/>
