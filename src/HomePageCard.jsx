@@ -61,6 +61,7 @@ export default function HomePageCard() {
     //Returns an array of game objects that meet the filtered criteria
     function filterGames(gamesArray, platforms, genres) {
         let anyCheckedBoxes = false
+        let filteredGames = []
 
         for (let [key, value] of Object.entries(platforms)) {
             if (value == true)
@@ -75,9 +76,19 @@ export default function HomePageCard() {
         //return all games if there are no checked boxes
         if (!anyCheckedBoxes)
             return gamesArray
-        
-        for (let game = 0; game < games.length; game++) {
-            
+
+        //Go through each game from the API
+        for (let i = 0; i < games.length; i++) {
+            //Go through each platform for the game
+            for (let j = 0; j < games[i].parent_platforms.length; j++) {
+                //Check if the games platform/s include the checked platform/s
+                for (let [key, value] of Object.entries(platforms)) {
+                    if (value == true && games[i].parent_platforms[j].platform.name == key) {
+                        filteredGames.push(games[i])
+                        console.log(filteredGames)
+                    }
+                }
+            }
         }
     }
 
