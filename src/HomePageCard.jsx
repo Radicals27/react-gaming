@@ -39,7 +39,6 @@ export default function HomePageCard() {
         Racing: false,
         Sports: false
     })
-    const [previousGenres, setPreviousGenres] = React.useState({})
 
     const [platforms, setPlatforms] = React.useState({
         PC: false,
@@ -47,6 +46,8 @@ export default function HomePageCard() {
         Xbox: false,
         Nintendo: false,
     })
+
+    const [previousGenres, setPreviousGenres] = React.useState({})
     const [previousPlatforms, setPreviousPlatforms] = React.useState({})
 
     //When user toggles a checkbox, update state to reflect the checked boxes
@@ -74,8 +75,10 @@ export default function HomePageCard() {
             //use 'key' or 'value'
         }
         //return all games if there are no checked boxes
-        if (!anyCheckedBoxes)
+        if (!anyCheckedBoxes) {
+            console.log("No checkboxes ticked!")
             return gamesArray
+        }
 
         //Go through each game from the API
         for (let i = 0; i < games.length; i++) {
@@ -85,31 +88,33 @@ export default function HomePageCard() {
                 for (let [key, value] of Object.entries(platforms)) {
                     if (value == true && games[i].parent_platforms[j].platform.name == key) {
                         filteredGames.push(games[i])
-                        console.log(filteredGames)
                     }
                 }
             }
         }
+        console.log("Some checkboxes ticked!")
+        console.log(`Returning: ${filteredGames}`)
+        return filteredGames
     }
 
     useEffect(() => {
         axios.get('https://react-gaming-backend.herokuapp.com/')
             .then(gamesList => {
-                setGames(gamesList.data)
+                setGames(filterGames(gamesList.data, platforms, genres))
             })
+        
     }, [])
 
     useEffect(() => {
-        console.log(games)
         if (previousGenres != genres) {
-            console.log("Genre has changed!")
+            console.log("genre changed")
             setPreviousGenres(genres)
-            filterGames(games, platforms, genres)
+            setGames(filterGames(games, platforms, genres))
         }
         if (previousPlatforms != platforms) {
-            console.log("Platform has changed!")
+            console.log("platform changed")
             setPreviousPlatforms(platforms)
-            filterGames(games, platforms, genres)
+            setGames(filterGames(games, platforms, genres))
         }
     })
 
