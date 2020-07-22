@@ -59,6 +59,11 @@ export default function HomePageCard() {
     }
 
     useEffect(() => {
+        axios.get('https://react-gaming-backend.herokuapp.com/')
+        .then(gamesList => {
+            setGames(gamesList.data)
+        })
+        console.log(games)
         if (previousGenres != genres) {
             console.log("Genre has changed!")
             setPreviousGenres(genres)
@@ -67,12 +72,19 @@ export default function HomePageCard() {
             console.log("Platform has changed!")
             setPreviousPlatforms(platforms)
         }
+    }, [])
+
+    useEffect(() => {
+        console.log(games)
     })
 
-    axios.get('https://react-gaming-backend.herokuapp.com/')
-        .then(gamesList => {
-            setGames(gamesList.data)
-        })
+
+
+    //Pseudo code for filter function:
+    //If all boxes are unticked, display ALL games
+       //setGames(gamesList.data)
+    //If a checkbox is ticked, ONLY display games that match its criteria
+       //if platform == "Xbox"
 
     return (
         <Card>
