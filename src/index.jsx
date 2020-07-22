@@ -8,10 +8,7 @@ import Navbar from './Navbar'
 
 ReactDOM.render(
   <React.StrictMode>
-    < Navbar />
     <App />
-    <Search />
-    <Login />
   </React.StrictMode>,
   document.getElementById('root')
 )
