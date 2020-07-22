@@ -112,7 +112,9 @@ export default function HomePageCard() {
     }, [])
 
     useEffect(() => {
-        
+        //If no checkboxes are ticked, display all games
+        if (filterGames(games, platforms, genres) == games)
+            setGamesToDisplay(games)
         if (previousGenres != genres) {
             console.log("genre changed")
             setPreviousGenres(genres)
