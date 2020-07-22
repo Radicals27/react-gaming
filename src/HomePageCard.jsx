@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 
 import './styles/homepagecard.css'
-import './search.css'
+import './checkbox.css'
 
 const useStyles = makeStyles({
     root: {
@@ -29,12 +29,7 @@ export default function HomePageCard() {
 
     const [games, setGames] = useState([])
     // Set up the checkboxes for filtering games
-    const [checked, setChecked] = React.useState({
-        PC: false,
-        PlayStation: false,
-        Xbox: false,
-        Nintendo: false,
-
+    const [genres, setGenres] = React.useState({
         Action: false,
         Strategy: false,
         RPG: false,
@@ -44,10 +39,35 @@ export default function HomePageCard() {
         Racing: false,
         Sports: false
     })
+    const [previousGenres, setPreviousGenres] = React.useState({})
+
+    const [platforms, setPlatforms] = React.useState({
+        PC: false,
+        PlayStation: false,
+        Xbox: false,
+        Nintendo: false,
+    })
+    const [previousPlatforms, setPreviousPlatforms] = React.useState({})
 
     //When user toggles a checkbox, update state to reflect the checked boxes
-    const handleToggle = ({ target }) =>
-        setChecked(s => ({ ...s, [target.name]: !s[target.name] }))
+    const handleToggleGenre = ({ target }) => {
+        setGenres(s => ({ ...s, [target.name]: !s[target.name] }))
+    }
+
+    const handleTogglePlatform = ({ target }) => {
+        setPlatforms(s => ({ ...s, [target.name]: !s[target.name] }))
+    }
+
+    useEffect(() => {
+        if (previousGenres != genres) {
+            console.log("Genre has changed!")
+            setPreviousGenres(genres)
+        }
+        if (previousPlatforms != platforms) {
+            console.log("Platform has changed!")
+            setPreviousPlatforms(platforms)
+        }
+    })
 
     axios.get('https://react-gaming-backend.herokuapp.com/')
         .then(gamesList => {
@@ -57,16 +77,31 @@ export default function HomePageCard() {
     return (
         <Card>
             <div className="checkboxContainer">
-                {Object.keys(checked).map(key => (
+                {Object.keys(platforms).map(key => (
                     <label className="label">{key}
                         <input
                             type="checkbox"
-                            onChange={handleToggle}
+                            onChange={handleTogglePlatform}
                             key={key}
                             name={key}
-                            checked={checked[key]}
+                            checked={platforms[key]}
                         />
                     </label>
+
+                ))}
+            </div>
+            <div className="checkboxContainer">
+                {Object.keys(genres).map(key => (
+                    <label className="label">{key}
+                        <input
+                            type="checkbox"
+                            onChange={handleToggleGenre}
+                            key={key}
+                            name={key}
+                            checked={genres[key]}
+                        />
+                    </label>
+
                 ))}
             </div>
             {games.map(game => (
