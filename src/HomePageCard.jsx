@@ -3,10 +3,10 @@ import axios from 'axios'
 import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
-import CardActions from '@material-ui/core/CardActions'
+//import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
-import Button from '@material-ui/core/Button'
+//import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 
 import './styles/homepagecard.css'
@@ -26,8 +26,11 @@ export default function HomePageCard() {
     const handleExpandClick = () => {
         setExpanded(!expanded)
     }
-
+    //ALL games from the API, called once at start
     const [games, setGames] = useState([])
+    //The actual games we will display, which will be filtered by checkboxes
+    const [gamesToDisplay, setGamesToDisplay] = useState([])
+
     // Set up the checkboxes for filtering games
     const [genres, setGenres] = React.useState({
         Action: false,
@@ -65,28 +68,30 @@ export default function HomePageCard() {
         let filteredGames = []
 
         for (let [key, value] of Object.entries(platforms)) {
-            if (value == true)
+            if (value === true)
                 anyCheckedBoxes = true
             //use 'key' or 'value'
         }
         for (let [key, value] of Object.entries(genres)) {
-            if (value == true)
+            if (value === true)
                 anyCheckedBoxes = true
             //use 'key' or 'value'
         }
         //return all games if there are no checked boxes
         if (!anyCheckedBoxes) {
             console.log("No checkboxes ticked!")
+            console.log(`returning ${gamesArray}`)
             return gamesArray
         }
 
-        //Go through each game from the API
+        //Go through each game returned from the API
         for (let i = 0; i < games.length; i++) {
             //Go through each platform for the game
             for (let j = 0; j < games[i].parent_platforms.length; j++) {
                 //Check if the games platform/s include the checked platform/s
                 for (let [key, value] of Object.entries(platforms)) {
-                    if (value == true && games[i].parent_platforms[j].platform.name == key) {
+                    //console.log(`platform.name: ${games[i].parent_platforms[j].platform.name}, key: ${key}`)
+                    if (value === true && games[i].parent_platforms[j].platform.name === key && !filteredGames.includes(games[i])) {
                         filteredGames.push(games[i])
                     }
                 }
@@ -100,21 +105,24 @@ export default function HomePageCard() {
     useEffect(() => {
         axios.get('https://react-gaming-backend.herokuapp.com/')
             .then(gamesList => {
-                setGames(filterGames(gamesList.data, platforms, genres))
+                console.log(`Calling backend API for all games`)
+                setGames(gamesList.data)
             })
-        
+            .then(setGamesToDisplay(games))
     }, [])
 
     useEffect(() => {
+        
         if (previousGenres != genres) {
             console.log("genre changed")
             setPreviousGenres(genres)
-            setGames(filterGames(games, platforms, genres))
+            setGamesToDisplay(filterGames(games, platforms, genres))
         }
         if (previousPlatforms != platforms) {
             console.log("platform changed")
             setPreviousPlatforms(platforms)
-            setGames(filterGames(games, platforms, genres))
+            setGamesToDisplay(filterGames(games, platforms, genres))
+            console.log(`gamesToDisplay: ${gamesToDisplay}`)
         }
     })
 
@@ -147,7 +155,7 @@ export default function HomePageCard() {
                     </label>
                 ))}
             </div>
-            {games.map(game => (
+            {gamesToDisplay.map(game => (
                 <CardActionArea key={games.id}>
                     <div>
                         <CardMedia
