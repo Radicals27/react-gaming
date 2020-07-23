@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { makeStyles } from '@material-ui/core/styles'
+//import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 //import CardActions from '@material-ui/core/CardActions'
@@ -12,20 +12,20 @@ import Typography from '@material-ui/core/Typography'
 import './styles/homepagecard.css'
 import './checkbox.css'
 
-const useStyles = makeStyles({
-    root: {
-        maxWidth: 345,
-    },
-})
+// const useStyles = makeStyles({
+//     root: {
+//         maxWidth: 345,
+//     },
+// })
 
 export default function HomePageCard() {
-    const classes = useStyles()
+    //const classes = useStyles()
 
-    const [expanded, setExpanded] = React.useState(false)
+    //const [expanded, setExpanded] = React.useState(false)
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded)
-    }
+    // const handleExpandClick = () => {
+    //     setExpanded(!expanded)
+    // }
     //ALL games from the API, called once at start
     const [games, setGames] = useState([])
     //The actual games we will display, which will be filtered by checkboxes
@@ -122,12 +122,12 @@ export default function HomePageCard() {
         //If no checkboxes are ticked, display all games
         if (filterGames(games, platforms, genres) == games)
             setGamesToDisplay(games)
-        if (previousGenres != genres) {
+        if (previousGenres !== genres) {
             console.log("genre changed")
             setPreviousGenres(genres)
             setGamesToDisplay(filterGames(games, platforms, genres))
         }
-        if (previousPlatforms != platforms) {
+        if (previousPlatforms !== platforms) {
             console.log("platform changed")
             setPreviousPlatforms(platforms)
             setGamesToDisplay(filterGames(games, platforms, genres))
