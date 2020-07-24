@@ -28,6 +28,7 @@ export default function Auth() {
       withCredentials: true
     })
       .then(res => {
+        console.log(e.target[1].value)
         if (res.data.fail) {
           setError(res.data.fail)
         } else {
@@ -37,6 +38,7 @@ export default function Auth() {
       .catch(err => {
         console.log(err)
       })
+
   }
   const handleLogIn = (e) => {
     e.preventDefault()
