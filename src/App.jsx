@@ -5,6 +5,7 @@ import Search from './Search'
 import './styles/App.css'
 
 import HomePage from './HomePage'
+import TrendingPage from './TrendingPage'
 import CookieBar from './CookieBar'
 
 import Navbar from "./Navbar"
@@ -19,9 +20,11 @@ export default function App() {
             <Auth />
             <Navbar/>
             <Search/>
+            <TrendingPage/>
             <BrowserRouter>
                 <Switch>
                     <Route exact path='/' component={HomePage} />
+                    <Route exact path='/trending' component={TrendingPage}/>
                 </Switch>
             </BrowserRouter>
         </div>
