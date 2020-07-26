@@ -31,6 +31,9 @@ export default function TrendingPage(){
       }, [getRawgApi])
     return(
         <div>
+            <Typography>
+                Trending games: 
+            </Typography>
             <GridList cols={3}>\
             { Object.values(games).map(game => (
                 <GridListTile key={games.id}>
