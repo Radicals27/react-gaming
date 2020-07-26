@@ -10,6 +10,7 @@ import CookieBar from './CookieBar'
 
 import Navbar from "./Navbar"
 import Auth from "./Auth"
+import DetailsPage from './DetailsPage'
 
 export default function App() {
     
@@ -17,13 +18,14 @@ export default function App() {
     return (
         <div className="App-header">
             <CookieBar/>
-            <Auth />
+            {/* <Auth /> */}
             <Navbar/>
             <Search/>
             <TrendingPage/>
+            {/* <DetailsPage/> */}
             <BrowserRouter>
                 <Switch>
-                    <Route exact path='/' component={HomePage} />
+                    <Route exact path='/' component={DetailsPage} />
                     <Route exact path='/trending' component={TrendingPage}/>
                 </Switch>
             </BrowserRouter>

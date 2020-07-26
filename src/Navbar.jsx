@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import { AppBar, 
          Toolbar, 
          Typography, 
@@ -9,6 +9,7 @@ import { AppBar,
          useScrollTrigger,
          IconButton
     } from '@material-ui/core'
+// import WhatshotIcon from '@material-ui/icons'
     
 import './Navbar.css'
 

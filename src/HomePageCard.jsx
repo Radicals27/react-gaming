@@ -9,23 +9,12 @@ import CardMedia from '@material-ui/core/CardMedia'
 //import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 
+import BACKEND_URL from './constants/const'
+
 import './styles/homepagecard.css'
 import './checkbox.css'
 
-// const useStyles = makeStyles({
-//     root: {
-//         maxWidth: 345,
-//     },
-// })
-
 export default function HomePageCard() {
-    //const classes = useStyles()
-
-    //const [expanded, setExpanded] = React.useState(false)
-
-    // const handleExpandClick = () => {
-    //     setExpanded(!expanded)
-    // }
     //ALL games from the API, called once at start
     const [games, setGames] = useState([])
     //The actual games we will display, which will be filtered by checkboxes
@@ -110,7 +99,7 @@ export default function HomePageCard() {
     }
 
     useEffect(() => {
-        axios.get('https://react-gaming-backend.herokuapp.com/')
+        axios.get(`https://react-gaming-backend.herokuapp.com`)
             .then(gamesList => {
                 console.log(`Calling backend API for all games`)
                 setGames(gamesList.data)
