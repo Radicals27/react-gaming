@@ -7,6 +7,7 @@ import './styles/App.css'
 import HomePage from './HomePage'
 import TrendingPage from './TrendingPage'
 import CookieBar from './CookieBar'
+import TrendingCarousel from './TrendingCarousel'
 
 import Navbar from "./Navbar"
 import Auth from "./Auth"
@@ -20,7 +21,6 @@ export default function App() {
             <CookieBar/>
             {/* <Auth /> */}
             <Navbar/>
-            <Search/>
             <TrendingPage/>
             {/* <DetailsPage/> */}
             <BrowserRouter>

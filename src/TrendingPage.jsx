@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import axios from 'axios'
-//import { makeStyles } from '@material-ui/core/styles'
 import {Card, CardActionArea, CardContent, Grid, GridList, GridListTile} from '@material-ui/core'
 import CardMedia from '@material-ui/core/CardMedia'
-//import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
-import DEV_BACKEND_URL from './constants/const'
+import TrendingCarousel from './TrendingCarousel'
 
 export default function TrendingPage(){
     const [games, setGames] = useState([])
@@ -31,6 +28,8 @@ export default function TrendingPage(){
       }, [getRawgApi])
     return(
         <div>
+
+            <TrendingCarousel/>
             <Typography>
                 Trending games: 
             </Typography>
