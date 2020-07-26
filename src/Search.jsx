@@ -1,6 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { Input } from '@material-ui/core'
 import SearchDropdown, {SearchDropdownNoResult} from './SearchDropdown'
+import zIndex from '@material-ui/core/styles/zIndex'
+
+import './styles/Search.css'
 
 export default function Search() {
 const [data, setData] = useState(null)
@@ -36,7 +39,7 @@ useEffect(() => {
 
     return (
         <>
-            <div className="search">
+            <div className="search" style={ {zIndex: 1}}>
                 <Input onChange={setKeywordInInput} value={keyword} placeholder={"Chicken"}/>
                 {dataIsReady ? (
                 <Fragment>
