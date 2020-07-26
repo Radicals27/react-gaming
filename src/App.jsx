@@ -21,8 +21,6 @@ export default function App() {
             <CookieBar/>
             {/* <Auth /> */}
             <Navbar/>
-            <Search/>
-            <TrendingCarousel/>
             <TrendingPage/>
             {/* <DetailsPage/> */}
             <BrowserRouter>

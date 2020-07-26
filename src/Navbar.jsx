@@ -10,7 +10,8 @@ import { AppBar,
          IconButton
     } from '@material-ui/core'
 // import WhatshotIcon from '@material-ui/icons'
-    
+import Search from './Search'
+
 import './Navbar.css'
 
 function HideOnScroll(props) {
@@ -22,6 +23,8 @@ function HideOnScroll(props) {
   
     return (
       <Slide appear={false} direction="down" in={!trigger}>
+
+
         {children}
       </Slide>
     );
@@ -43,12 +46,7 @@ export default function Navbar(props) {
             <Button>
                 Our Mission 
             </Button>
-            <Button>
-                Gallery 
-            </Button>
-            <Button>
-                About Us
-            </Button>
+            <Search/>
           </Toolbar>
         </AppBar>
       </HideOnScroll>

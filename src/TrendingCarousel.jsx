@@ -33,9 +33,5 @@ export default function TrendingCarousel() {
             </div>
                 ))}
         </Carousel>
-
-            
-        
-        
     )
 }
