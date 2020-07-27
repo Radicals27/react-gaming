@@ -4,7 +4,7 @@ import './styles/Navbar.css'
 import axios from 'axios'
 
 export default function Auth() {
-  const url = "https://react-gaming-backend.herokuapp.com/"
+  const url = "https://react-gaming-backend.herokuapp.com"
   const [user, setUser] = useState(false)
   const [error, setError] = useState(false)
 
