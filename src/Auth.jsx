@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ReactDOM from 'react-dom'
-import './styles/login.css'
+import './styles/Navbar.css'
 import axios from 'axios'
 
 export default function Auth() {
@@ -80,30 +80,33 @@ export default function Auth() {
         </>
       ) : (
           <>
-            <h2>Register</h2>
-            <form onSubmit={handleSignUp}>
-              <label>Username</label>
-              <input />
-              <label>Password</label>
-              <input />
-              <button>Sign up</button>
-            </form>
-            <h2>Login</h2>
-            <form onSubmit={handleLogIn}>
-              <label>Username</label>
-              <input />
-              <label>Password</label>
-              <input />
-              <button>Sign In</button>
-            </form>
-            <button onClick={handleGoogleAuth}>Google Auth</button>
-            <button onClick={handleDiscordAuth}>Discord Auth</button>
-            {error ? (
-              <div>
-                <h4>{error.name}</h4>
-                <p>{error.message}</p>
-              </div>
-            ) : (null)}
+            <div className="login">
+              <form onSubmit={handleSignUp}>
+                <label>Register with Username</label>
+                <input />
+                <label>Password</label>
+                <input />
+                <button>Sign up</button>
+              </form>
+
+              <form onSubmit={handleLogIn}>
+                  <br></br>
+                  <label>Login with Username</label>
+                  <input />
+                  <label>Password</label>
+                  <input />
+                  <button>Sign In</button>
+              </form>
+              <br></br><br></br><br></br>
+              <button className="oauth" onClick={handleGoogleAuth}>Google Auth</button>
+              <button className="oauth" onClick={handleDiscordAuth}>Discord Auth</button>
+              {error ? (
+                <div>
+                  <h4>{error.name}</h4>
+                  <p>{error.message}</p>
+                </div>
+              ) : (null)}
+            </div>
           </>
         )}
     </div>
