@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
+import './styles/Search.css'
 
 export default function SearchDropdown({ result }) {
   return (
     <Fragment>
-      <a key={result.id + 'a'} href={`https://react-gaming-backend.herokuapp.com/game/${result.id}-${result.slug}`} className='text-decoration-none'>
-        <li key={result.id + 'li'} className='my-1 text-nowrap d-inline-block text-truncate result-list-width'>
+      <a key={result.id + 'a'} href={`http://react-gaming.herokuapp.com/game/${result.id}-${result.slug}`} className='text-decoration-none'>
+        <li key={result.id + 'li'} className='list'>
           {result.background_image ? (
             <img
               className='autocomplete-img-style'

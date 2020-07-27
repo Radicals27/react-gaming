@@ -1,0 +1,21 @@
+.bg-white {
+    background-color: #ffffff;
+  }
+
+  .autocomplete-img-style {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+  }
+
+  .dropdown-position {
+    top: 35px;
+  }
+
+  .list{
+      list-style-type: none;
+  }
+
+  .search{
+      background-color: white;
+  }
