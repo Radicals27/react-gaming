@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 import Typography from '@material-ui/core/Typography'
+require('dotenv').config()
 
 export default function TrendingCarousel() {
     const [games, setGames] = useState([])
     const getRawgApi = useCallback(async () => {
         try {
           // _RAWG game details call
-          const response = await fetch('http://localhost:4000/trending')
+          const response = await fetch(`${process.env.BACK_END_URL}/trending`)
           const json = await response.json()
           console.log(json.results)
           setGames(json.results)

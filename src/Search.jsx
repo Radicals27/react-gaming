@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { Input } from '@material-ui/core'
 import SearchDropdown, {SearchDropdownNoResult} from './SearchDropdown'
+require('dotenv').config()
 
 export default function Search() {
 const [data, setData] = useState(null)
@@ -12,7 +13,7 @@ useEffect(() => {
     async function getRawgApi() {
       if (keyword !== '') {
         try {
-          const response = await fetch(`http://localhost:4000/videogameAutocomplete?q=${keyword.toLowerCase()}`)
+          const response = await fetch(`${process.env.BACK_END_URL}/videogameAutocomplete?q=${keyword.toLowerCase()}`)
           const json = await response.json()
           setData(json)
           setDataIsReady(true)

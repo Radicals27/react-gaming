@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react"
 import ReactDOM from 'react-dom'
 import './styles/login.css'
 import axios from 'axios'
+require('dotenv').config()
 
 export default function Auth() {
-  const url = "http://localhost:4000"
+  const url = process.env.BACK_END_URL
   const [user, setUser] = useState(false)
   const [error, setError] = useState(false)
 

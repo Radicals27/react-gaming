@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import DEV_BACKEND_URL from './constants/const'
+require('dotenv').config()
 
 export default function DetailsPage() {
     const [game, setGame] = useState([])
@@ -9,7 +9,7 @@ export default function DetailsPage() {
 
     const getData = () => {
         try{
-            axios.get(`http://localhost:4000/game/${id}`)
+            axios.get(`${process.env.BACK_END_URL}/game/${id}`)
             .then(g => {
                 console.log(g)
             })
