@@ -3,7 +3,6 @@ import {Card, CardActionArea, CardContent, Grid, GridList, GridListTile} from '@
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import TrendingCarousel from './TrendingCarousel'
-require('dotenv').config()
 
 export default function TrendingPage(){
     const [games, setGames] = useState([])
@@ -12,7 +11,7 @@ export default function TrendingPage(){
     const getRawgApi = useCallback(async () => {
         try {
           // _RAWG game details call
-          const response = await fetch(`${process.env.BACK_END_URL}/trending`)
+          const response = await fetch(`https://react-gaming-backend.herokuapp.com/trending`)
           const json = await response.json()
           console.log(json.results)
           setGames(json.results)

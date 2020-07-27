@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-require('dotenv').config()
 
 export default function DetailsPage() {
     const [game, setGame] = useState([])
@@ -9,7 +8,7 @@ export default function DetailsPage() {
 
     const getData = () => {
         try{
-            axios.get(`${process.env.BACK_END_URL}/game/${id}`)
+            axios.get(`https://react-gaming-backend.herokuapp.com/game/${id}`)
             .then(g => {
                 console.log(g)
             })

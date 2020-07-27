@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react'
-require('dotenv').config()
 
 export default function SearchDropdown({ result }) {
   return (
     <Fragment>
-      <a key={result.id + 'a'} href={`${process.env.BACK_END_URL}/game/${result.id}-${result.slug}`} className='text-decoration-none'>
+      <a key={result.id + 'a'} href={`https://react-gaming-backend.herokuapp.com/game/${result.id}-${result.slug}`} className='text-decoration-none'>
         <li key={result.id + 'li'} className='my-1 text-nowrap d-inline-block text-truncate result-list-width'>
           {result.background_image ? (
             <img

@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react"
 import ReactDOM from 'react-dom'
 import './styles/login.css'
 import axios from 'axios'
-require('dotenv').config()
 
 export default function Auth() {
-  const url = process.env.BACK_END_URL
+  const url = "https://react-gaming-backend.herokuapp.com/"
   const [user, setUser] = useState(false)
   const [error, setError] = useState(false)
 
