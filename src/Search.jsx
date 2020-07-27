@@ -2,6 +2,8 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { Input } from '@material-ui/core'
 import SearchDropdown, {SearchDropdownNoResult} from './SearchDropdown'
 
+import './styles/Search.css'
+
 export default function Search() {
 const [data, setData] = useState(null)
 const [dataIsReady, setDataIsReady] = useState(false)
@@ -36,12 +38,12 @@ useEffect(() => {
 
     return (
         <>
-            <div className="search">
+            <div className="search" style={ {zIndex: 1}}>
                 <Input onChange={setKeywordInInput} value={keyword} placeholder={"Chicken"}/>
                 {dataIsReady ? (
                 <Fragment>
                     {dropdownIsopened ? (
-                    <div className='bg-white w-auto text-dark position-absolute dropdown-position py-2 px-2'>
+                    <div className='bg-white position-absolute dropdown-position'>
                         <ul className='list-unstyled mb-0'>
                         {data.count >= 1 ? (
                             // only first eight search results displayed in the dropdown
@@ -57,6 +59,5 @@ useEffect(() => {
                 ) : null}
             </div>
         </>
-        
     )
 }
