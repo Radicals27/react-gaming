@@ -1,36 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { AppBar, 
-         Toolbar, 
-         Typography, 
-         Slide, 
-         Button, 
-         CssBaseline, 
-         useScrollTrigger,
-         IconButton
-    } from '@material-ui/core'
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Slide,
+  Button,
+  CssBaseline,
+  useScrollTrigger,
+  IconButton
+} from '@material-ui/core'
 // import WhatshotIcon from '@material-ui/icons'
 import Search from './Search'
-
 import './Navbar.css'
 
 function HideOnScroll(props) {
-    const { children, window } = props
-    const trigger = useScrollTrigger({ target: window ? window() : undefined })
-  
-    return (
-      <Slide appear={false} direction="down" in={!trigger}>
+  const { children, window } = props
+  const trigger = useScrollTrigger({ target: window ? window() : undefined })
 
-
-        {children}
-      </Slide>
-    );
-  }
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  )
+}
 
 export default function Navbar(props) {
 
-
-    return (
+  return (
     <>
       {/* <CssBaseline /> */}
       <HideOnScroll {...props}>
@@ -38,16 +35,16 @@ export default function Navbar(props) {
           <Toolbar>
             <Typography variant="h6">REACT GAMING</Typography>
             <Button>
-                Home 
+              Home
             </Button>
-            <Button>
-                Our Mission 
-            </Button>
-            <Search/>
+            <Button onClick={() => console.log("Our Mission clicked")}>
+              Our Mission
+              </Button>
+            <Search />
           </Toolbar>
         </AppBar>
       </HideOnScroll>
       <Toolbar />
     </>
-    )
+  )
 }
