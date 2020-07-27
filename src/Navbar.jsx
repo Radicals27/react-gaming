@@ -12,7 +12,8 @@ import {
 } from '@material-ui/core'
 // import WhatshotIcon from '@material-ui/icons'
 import Search from './Search'
-import './Navbar.css'
+import './styles/Navbar.css'
+import Auth from './Auth'
 
 function HideOnScroll(props) {
   const { children, window } = props
@@ -30,21 +31,25 @@ export default function Navbar(props) {
   return (
     <>
       {/* <CssBaseline /> */}
-      <HideOnScroll {...props}>
-        <AppBar colour="secondary">
-          <Toolbar>
-            <Typography variant="h6">REACT GAMING</Typography>
-            <Button>
-              Home
-            </Button>
-            <Button onClick={() => console.log("Our Mission clicked")}>
-              Our Mission
+        <HideOnScroll {...props}>
+          <AppBar colour="secondary">
+            <Toolbar>
+              <Typography variant="h6">REACT GAMING</Typography>
+              <Button>
+                Home
               </Button>
-            <Search />
-          </Toolbar>
-        </AppBar>
-      </HideOnScroll>
-      <Toolbar />
+              <Button onClick={() => console.log("Our Mission clicked")}>
+                Our Mission
+                </Button>
+              <Search/>
+              <Auth>
+              </Auth>
+            </Toolbar>
+
+          </AppBar>
+        </HideOnScroll>
+      {/* <Toolbar /> */}
+
     </>
   )
 }
