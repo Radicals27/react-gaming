@@ -9,8 +9,7 @@ export default function TrendingCarousel() {
     const getRawgApi = useCallback(async () => {
         try {
           // _RAWG game details call
-          const response = await fetch(`${process.env.BACK_END_URL}/trending`)
-          console.log(process.env.BACK_END_URL)
+          const response = await fetch(`https://react-gaming-backend.herokuapp.com/trending`)
           const json = await response.json()
           console.log(json.results)
           setGames(json.results)
