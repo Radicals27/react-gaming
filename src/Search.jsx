@@ -1,7 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { Input } from '@material-ui/core'
 import SearchDropdown, {SearchDropdownNoResult} from './SearchDropdown'
-import zIndex from '@material-ui/core/styles/zIndex'
 
 import './styles/Search.css'
 
@@ -44,7 +43,7 @@ useEffect(() => {
                 {dataIsReady ? (
                 <Fragment>
                     {dropdownIsopened ? (
-                    <div className='bg-white w-auto text-dark position-absolute dropdown-position py-2 px-2'>
+                    <div className='bg-white position-absolute dropdown-position'>
                         <ul className='list-unstyled mb-0'>
                         {data.count >= 1 ? (
                             // only first eight search results displayed in the dropdown
@@ -60,6 +59,5 @@ useEffect(() => {
                 ) : null}
             </div>
         </>
-        
     )
 }

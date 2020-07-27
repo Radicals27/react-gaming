@@ -15,3 +15,7 @@
   .list{
       list-style-type: none;
   }
+
+  .search{
+      background-color: white;
+  }
