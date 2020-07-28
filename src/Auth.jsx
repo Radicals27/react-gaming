@@ -91,7 +91,7 @@ export default function Auth() {
                   <input />
                   <label>Password</label>
                   <input type="password" /> <br></br>
-                  <Button variant="contained" color="primary">Sign up</Button>
+                  <Button variant="contained" color="primary" type="submit">Sign up</Button>
                 </form>
 
                 <form onSubmit={handleLogIn}>
@@ -100,7 +100,7 @@ export default function Auth() {
                   <input />
                   <label>Password</label>
                   <input type="password" /> <br></br>
-                  <Button variant="contained" color="primary">Sign In</Button>
+                  <Button variant="contained" color="primary" type="submit">Sign In</Button>
                 </form>
                 <br></br><br></br><br></br>
                 <Button variant="contained" color="secondary" onClick={handleGoogleAuth}>Google Auth</Button>
