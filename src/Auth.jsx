@@ -5,6 +5,7 @@ import './styles/login.css'
 
 export default function Auth() {
   const url = "https://react-gaming-backend.herokuapp.com"
+  const frontEndUrl = "https://react-gaming.herokuapp.com"
   const [user, setUser] = useState(false)
   const [error, setError] = useState(false)
 
@@ -32,7 +33,7 @@ export default function Auth() {
           setError(res.data.fail)
         } else {
           setUser(res.data)
-          window.location = `${url}`
+          window.location = `${frontEndUrl}`
         }
       })
       .catch(err => {
@@ -50,7 +51,7 @@ export default function Auth() {
     })
       .then(res => {
         setUser(res.data)
-        window.location = `${url}`
+        window.location = `${frontEndUrl}`
       })
       .catch(err => {
         setError(err.response.data)
@@ -87,17 +88,17 @@ export default function Auth() {
                 <label>Register with Username</label>
                 <input />
                 <label>Password</label>
-                <input type="password"/>
+                <input type="password" />
                 <button>Sign up</button>
               </form>
 
               <form onSubmit={handleLogIn}>
-                  <br></br>
-                  <label>Login with Username</label>
-                  <input />
-                  <label>Password</label>
-                  <input  type="password"/>
-                  <button>Sign In</button>
+                <br></br>
+                <label>Login with Username</label>
+                <input />
+                <label>Password</label>
+                <input type="password" />
+                <button>Sign In</button>
               </form>
               <br></br><br></br><br></br>
               <button onClick={handleGoogleAuth}>Google Auth</button>
