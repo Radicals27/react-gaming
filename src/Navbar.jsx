@@ -14,7 +14,6 @@ import {
 // import WhatshotIcon from '@material-ui/icons'
 import Search from './Search'
 import './styles/Navbar.css'
-import Auth from './Auth'
 
 function HideOnScroll(props) {
     const { children, window } = props
@@ -72,7 +71,13 @@ export default function Navbar(props) {
                             <h2>Logged in as {user.displayName || user.username}</h2>
                             <button onClick={handleLogOut}>Log Out</button>
                             </>
-                        ) : (null)}
+                        ) : (
+                            <div className="login-nav">
+                                <Button onClick={event => window.location.href='/login'}>
+                                    Register/Sign In
+                                </Button>
+                            </div>
+                        )}
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>
