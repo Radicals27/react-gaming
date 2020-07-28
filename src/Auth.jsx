@@ -32,6 +32,7 @@ export default function Auth() {
           setError(res.data.fail)
         } else {
           setUser(res.data)
+          window.location = `${url}`
         }
       })
       .catch(err => {
@@ -49,6 +50,7 @@ export default function Auth() {
     })
       .then(res => {
         setUser(res.data)
+        window.location = `${url}`
       })
       .catch(err => {
         setError(err.response.data)
