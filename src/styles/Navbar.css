@@ -4,10 +4,14 @@
   color: #f2f2f2;
 }
 
-.loggedIn {
+.logOut {
   position: absolute;
   right: 0;
-  margin-left: -100px;
+}
+
+h6 {
+  position: absolute;
+  right: 150px;
 }
 
 .topnav {
