@@ -21,12 +21,12 @@ export default function App() {
             <CookieBar/>
             {/* <Auth /> */}
             <Navbar/>
-            <TrendingPage/>
+            {/* <TrendingPage/> */}
             {/* <DetailsPage/> */}
             <BrowserRouter>
                 <Switch>
-                    <Route exact path='/' component={DetailsPage} />
-                    <Route exact path='/trending' component={TrendingPage}/>
+                    <Route exact path='/' component={TrendingPage} />
+                    {/* <Route exact path='/trending' component={TrendingPage}/> */}
                     <Route exact path='/game/:id' component={DetailsPage} />
                     <Route exact path='/login' component={Auth} />
                     <Route exact path='/mission' component={Mission} />
