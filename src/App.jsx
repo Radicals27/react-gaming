@@ -14,7 +14,6 @@ import Auth from "./Auth"
 import DetailsPage from './DetailsPage'
 
 export default function App() {
-    
 
     return (
         <div className="App-header">
@@ -27,6 +26,7 @@ export default function App() {
                 <Switch>
                     <Route exact path='/' component={DetailsPage} />
                     <Route exact path='/trending' component={TrendingPage}/>
+                    <Route exact path='/game/:id' component={DetailsPage} />
                 </Switch>
             </BrowserRouter>
         </div>
