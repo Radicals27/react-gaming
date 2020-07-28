@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, { useState, useEffect } from "react"
+import axios from 'axios'
 import PropTypes from 'prop-types'
 import {
     AppBar,
@@ -28,7 +28,30 @@ function HideOnScroll(props) {
 }
 
 export default function Navbar(props) {
+    // Find out if a user is already logged in
+    const [user, setUser] = useState(false)
+    const [error, setError] = useState(false)
+    const url = "https://react-gaming-backend.herokuapp.com"
 
+    useEffect(() => {
+        axios.get(`${url}/users/me`, {
+        withCredentials: true
+        })
+        .then(result => {
+            setUser(result.data)
+        })
+    }, [])
+
+    const handleLogOut = (e) => {
+    e.preventDefault()
+    axios.get(`${url}/users/logout`, {
+        withCredentials: true
+    })
+        .then(() => {
+        setUser(false)
+        setError(false)
+        })
+    }
     return (
         <>
             {/* <CssBaseline /> */}
@@ -43,10 +66,13 @@ export default function Navbar(props) {
                             Our Mission
                         </Button>
                         <Search />
-                        <Auth>
-                        </Auth>
+                        {user ? (
+                            <>
+                            <h2>Logged in as {user.displayName || user.username}</h2>
+                            <button onClick={handleLogOut}>Log Out</button>
+                            </>
+                        ) : (null)}
                     </Toolbar>
-
                 </AppBar>
             </HideOnScroll>
             {/* <Toolbar /> */}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import ReactDOM from 'react-dom'
-import './styles/Navbar.css'
 import axios from 'axios'
+import './styles/login.css'
 
 export default function Auth() {
   const url = "https://react-gaming-backend.herokuapp.com"
@@ -72,7 +72,7 @@ export default function Auth() {
     window.location = `${url}/auth/discord`
   }
   return (
-    <div>
+    <div className="container">
       {user ? (
         <>
           <h2>Logged in as {user.displayName || user.username}</h2>
@@ -80,7 +80,7 @@ export default function Auth() {
         </>
       ) : (
           <>
-            <div className="login">
+            <div>
               <form onSubmit={handleSignUp}>
                 <label>Register with Username</label>
                 <input />
@@ -98,8 +98,8 @@ export default function Auth() {
                   <button>Sign In</button>
               </form>
               <br></br><br></br><br></br>
-              <button className="oauth" onClick={handleGoogleAuth}>Google Auth</button>
-              <button className="oauth" onClick={handleDiscordAuth}>Discord Auth</button>
+              <button onClick={handleGoogleAuth}>Google Auth</button>
+              <button onClick={handleDiscordAuth}>Discord Auth</button>
               {error ? (
                 <div>
                   <h4>{error.name}</h4>
