@@ -85,7 +85,7 @@ export default function Auth() {
                 <label>Register with Username</label>
                 <input />
                 <label>Password</label>
-                <input />
+                <input type="password"/>
                 <button>Sign up</button>
               </form>
 
@@ -94,7 +94,7 @@ export default function Auth() {
                   <label>Login with Username</label>
                   <input />
                   <label>Password</label>
-                  <input />
+                  <input  type="password"/>
                   <button>Sign In</button>
               </form>
               <br></br><br></br><br></br>
