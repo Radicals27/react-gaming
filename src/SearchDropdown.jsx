@@ -4,7 +4,7 @@ import './styles/Search.css'
 export default function SearchDropdown({ result }) {
   return (
     <Fragment>
-      <a key={result.id + 'a'} href={`http://react-gaming.herokuapp.com/game/${result.id}-${result.slug}`} className='text-decoration-none'>
+      <a key={result.id + 'a'} href={`https://react-gaming.herokuapp.com/game/${result.id}-${result.slug}`} className='text-decoration-none'>
         <li key={result.id + 'li'} className='list'>
           {result.background_image ? (
             <img
