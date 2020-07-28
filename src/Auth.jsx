@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import ReactDOM from 'react-dom'
 import axios from 'axios'
 import './styles/login.css'
+import {Button} from '@material-ui/core'
 
 export default function Auth() {
   const url = "https://react-gaming-backend.herokuapp.com"
@@ -75,43 +76,45 @@ export default function Auth() {
     window.location = `${url}/auth/discord`
   }
   return (
-    <div className="container">
-      {user ? (
-        <>
-          <h2>Logged in as {user.displayName || user.username}</h2>
-          <button onClick={handleLogOut}>Log Out</button>
-        </>
-      ) : (
+    <div className="screen">
+      <div className="container">
+        {user ? (
           <>
-            <div>
-              <form onSubmit={handleSignUp}>
-                <label>Register with Username</label>
-                <input />
-                <label>Password</label>
-                <input type="password" />
-                <button>Sign up</button>
-              </form>
-
-              <form onSubmit={handleLogIn}>
-                <br></br>
-                <label>Login with Username</label>
-                <input />
-                <label>Password</label>
-                <input type="password" />
-                <button>Sign In</button>
-              </form>
-              <br></br><br></br><br></br>
-              <button onClick={handleGoogleAuth}>Google Auth</button>
-              <button onClick={handleDiscordAuth}>Discord Auth</button>
-              {error ? (
-                <div>
-                  <h4>{error.name}</h4>
-                  <p>{error.message}</p>
-                </div>
-              ) : (null)}
-            </div>
+            <h2>Logged in as {user.displayName || user.username}</h2>
+            <Button variant="contained" color="primary" onClick={handleLogOut}>Log Out</Button>
           </>
-        )}
+        ) : (
+            <>
+              <div>
+                <form onSubmit={handleSignUp}>
+                  <label>Register with Username</label>
+                  <input />
+                  <label>Password</label>
+                  <input type="password" /> <br></br>
+                  <Button variant="contained" color="primary">Sign up</Button>
+                </form>
+
+                <form onSubmit={handleLogIn}>
+                  <br></br>
+                  <label>Login with Username</label>
+                  <input />
+                  <label>Password</label>
+                  <input type="password" /> <br></br>
+                  <Button variant="contained" color="primary">Sign In</Button>
+                </form>
+                <br></br><br></br><br></br>
+                <Button variant="contained" color="secondary" onClick={handleGoogleAuth}>Google Auth</Button>
+                <Button variant="contained" color="secondary" onClick={handleDiscordAuth}>Discord Auth</Button>
+                {error ? (
+                  <div>
+                    <h4>{error.name}</h4>
+                    <p>{error.message}</p>
+                  </div>
+                ) : (null)}
+              </div>
+            </>
+          )}
+      </div>
     </div>
   )
 }

@@ -1,11 +1,24 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
 .container {
   background-color: #a1a1a1;
-  width: 50vw;
-  height: 600px;
+  border-style: solid;
+  padding: 5px;
+  width: 400px;
+  height: 500px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.screen {
+  width: 1vw;
+  height: 1vh;
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
 }

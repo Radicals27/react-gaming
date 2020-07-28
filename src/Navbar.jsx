@@ -59,24 +59,22 @@ export default function Navbar(props) {
                 <AppBar colour="secondary">
                     <Toolbar>
                         <Typography variant="h6">REACT GAMING</Typography>
-                        <Button onClick={event => window.location.href='/'}>
+                        <Button variant="contained" color="primary" onClick={event => window.location.href='/'}>
                             Home
                         </Button>
-                        <Button onClick={event => window.location.href='/mission'}>
+                        <Button variant="contained" color="primary" onClick={event => window.location.href='/mission'}>
                             Our Mission
                         </Button>
                         <Search />
                         {user ? (
                             <>
                             <h2>Logged in as {user.displayName || user.username}</h2>
-                            <button onClick={handleLogOut}>Log Out</button>
+                            <Button variant="contained" color="primary" onClick={handleLogOut}>Log Out</Button>
                             </>
                         ) : (
-                            <div className="login-nav">
-                                <Button onClick={event => window.location.href='/login'}>
-                                    Register/Sign In
-                                </Button>
-                            </div>
+                            <Button variant="contained" color="primary" onClick={event => window.location.href='/login'}>
+                                Register/Sign In
+                            </Button>
                         )}
                     </Toolbar>
                 </AppBar>
