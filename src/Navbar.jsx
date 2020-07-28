@@ -67,10 +67,10 @@ export default function Navbar(props) {
                         </Button>
                         <Search />
                         {user ? (
-                            <>
-                            <h2>Logged in as {user.displayName || user.username}</h2>
-                            <Button variant="contained" color="primary" onClick={handleLogOut}>Log Out</Button>
-                            </>
+                            <div className="loggedIn">
+                                <h6>Logged in as {user.displayName || user.username}</h6>
+                                <Button variant="contained" color="primary" onClick={handleLogOut}>Log Out</Button>
+                            </div>
                         ) : (
                             <Button variant="contained" color="primary" onClick={event => window.location.href='/login'}>
                                 Register/Sign In

@@ -79,10 +79,10 @@ export default function Auth() {
     <div className="screen">
       <div className="container">
         {user ? (
-          <div className="loggedIn">
+          <>
             <h6>Logged in as {user.displayName || user.username}</h6>
             <Button variant="contained" color="primary" onClick={handleLogOut}>Log Out</Button>
-          </div>
+          </>
         ) : (
             <>
               <div>
