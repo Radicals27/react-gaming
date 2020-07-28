@@ -5,7 +5,7 @@
 }
 
 .loggedIn {
-  display: relative;
+  position: relative;
   float: right;
 }
 
