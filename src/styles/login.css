@@ -10,7 +10,7 @@
   transform: translate(-50%, -50%);
 }
 
-.container h6 {
+.loggedIn {
   position: relative;
   float: right;
 }
