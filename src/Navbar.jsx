@@ -32,6 +32,7 @@ export default function Navbar(props) {
     const [user, setUser] = useState(false)
     const [error, setError] = useState(false)
     const url = "https://react-gaming-backend.herokuapp.com"
+    const frontEndUrl = "https://react-gaming.herokuapp.com"
 
     useEffect(() => {
         axios.get(`${url}/users/me`, {
@@ -59,10 +60,10 @@ export default function Navbar(props) {
                 <AppBar colour="secondary">
                     <Toolbar>
                         <Typography variant="h6">REACT GAMING</Typography>
-                        <Button>
+                        <Button onClick={event => window.location.href='/'}>
                             Home
                         </Button>
-                        <Button>
+                        <Button onClick={event => window.location.href='/mission'}>
                             Our Mission
                         </Button>
                         <Search />

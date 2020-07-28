@@ -12,6 +12,7 @@ import TrendingCarousel from './TrendingCarousel'
 import Navbar from "./Navbar"
 import Auth from "./Auth"
 import DetailsPage from './DetailsPage'
+import Mission from './Mission'
 
 export default function App() {
 
@@ -28,6 +29,7 @@ export default function App() {
                     <Route exact path='/trending' component={TrendingPage}/>
                     <Route exact path='/game/:id' component={DetailsPage} />
                     <Route exact path='/login' component={Auth} />
+                    <Route exact path='/mission' component={Mission} />
                 </Switch>
             </BrowserRouter>
         </div>
