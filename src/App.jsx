@@ -27,6 +27,7 @@ export default function App() {
                     <Route exact path='/' component={DetailsPage} />
                     <Route exact path='/trending' component={TrendingPage}/>
                     <Route exact path='/game/:id' component={DetailsPage} />
+                    <Route exact path='/login' component={Auth} />
                 </Switch>
             </BrowserRouter>
         </div>
