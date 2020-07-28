@@ -68,7 +68,7 @@ export default function Navbar(props) {
                         <Search />
                         {user ? (
                             <>
-                                <h6>Logged in as {user.displayName || user.username}</h6>
+                                <h5>Logged in as {user.displayName || user.username}</h5>
                                 <Button className="logOut" variant="contained" color="primary" onClick={handleLogOut}>Log Out</Button>
                             </>
                         ) : (
