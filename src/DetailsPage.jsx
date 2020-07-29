@@ -43,7 +43,7 @@ export default function DetailsPage(props) {
                 <Row xs={1} md={2}>
                     <Col xs={12} md={8}>
                         <Card>
-                            <Card.Img variant="top" src={game.backgroun_image} />
+                            <Card.Img variant="top" src={game.background_image} />
                             <Card.Body>
                                 <Card.Title>{game.name}</Card.Title>
                             </Card.Body>
