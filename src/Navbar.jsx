@@ -38,7 +38,11 @@ export default function Navbar(props) {
         withCredentials: true
         })
         .then(result => {
+            console.log(`User logged in: ${result.data}`)
             setUser(result.data)
+        })
+        .catch(err => {
+            console.log(`Error: ${err}`)
         })
     }, [])
 
@@ -48,8 +52,9 @@ export default function Navbar(props) {
         withCredentials: true
     })
         .then(() => {
-        setUser(false)
-        setError(false)
+            console.log(`User logged out`)
+            setUser(false)
+            setError(false)
         })
     }
     return (
