@@ -11,6 +11,7 @@ export default function DetailsPage() {
             axios.get(`https://react-gaming-backend.herokuapp.com/game/${id}`)
             .then(g => {
                 console.log(g)
+                setGame(g)
             })
         }catch(err){
             console.error(err)
@@ -40,8 +41,9 @@ export default function DetailsPage() {
     return (
         <>
             { getData()}
-            <br></br><br></br><br></br>
-             <h2>{this.props.match.params.id}</h2>  
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            <h2>{this.props.match.params.id}</h2> 
+            <h1>TESTING</h1> 
         </>
     )
 }
