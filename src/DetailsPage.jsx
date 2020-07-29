@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
-export default function DetailsPage() {
-    const [game, setGame] = useState([])
-    const id = game.id
+export default function DetailsPage(props) {
+    const [game, setGame] = useState({})
+    const id = props.match.params.id
 
     const getData = () => {
         try{
@@ -41,8 +41,8 @@ export default function DetailsPage() {
     return (
         <>
             { getData()}
-            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-            <h2>{this.props.match.params.id}</h2> 
+            <br></br><br></br><br></br><br></br>
+            <h2>{id}</h2> 
             <h1>TESTING</h1> 
         </>
     )
