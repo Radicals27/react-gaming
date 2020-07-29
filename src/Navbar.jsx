@@ -26,9 +26,8 @@ function HideOnScroll(props) {
     )
 }
 
-export default function Navbar(props) {
+export default function Navbar({user, setUser}) {
     // Find out if a user is already logged in
-    const [user, setUser] = useState(false)
     const [error, setError] = useState(false)
 
     useEffect(() => {
@@ -42,7 +41,7 @@ export default function Navbar(props) {
         .catch(err => {
             console.log(`Error: ${err}`)
         })
-    }, [user])
+    }, [])
 
     const handleLogOut = (e) => {
     e.preventDefault()

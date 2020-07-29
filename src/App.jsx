@@ -15,12 +15,13 @@ import DetailsPage from './DetailsPage'
 import Mission from './Mission'
 
 export default function App() {
+    const [user, setUser] = useState(false)
 
     return (
         <div className="App-header">
             <CookieBar/>
             {/* <Auth /> */}
-            <Navbar/>
+            <Navbar user={user} setUser={setUser}/>
             {/* <TrendingPage/> */}
             {/* <DetailsPage/> */}
             <BrowserRouter>
