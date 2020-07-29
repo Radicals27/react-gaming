@@ -69,7 +69,9 @@ export default function Navbar(props) {
                         {user ? (
                             <>
                                 <h5>Logged in as {user.displayName || user.username}</h5>
-                                <Button className="logOut" variant="contained" color="primary" onClick={handleLogOut}>Log Out</Button>
+                                <div className="logOut">
+                                    <Button variant="contained" color="primary" onClick={handleLogOut}>Log Out</Button>
+                                </div>
                             </>
                         ) : (
                             <Button variant="contained" color="primary" onClick={event => window.location.href='/login'}>
