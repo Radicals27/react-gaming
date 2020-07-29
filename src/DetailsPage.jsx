@@ -10,7 +10,7 @@ export default function DetailsPage(props) {
         try{
             axios.get(`https://react-gaming-backend.herokuapp.com/games/${id}`)
             .then(g => {
-                console.log(g)
+                console.log(`getData Game: ${g}`)
                 setGame(g)
             })
         }catch(err){
@@ -43,7 +43,7 @@ export default function DetailsPage(props) {
             { getData()}
             <br></br><br></br><br></br><br></br>
             <h2>{id}</h2> 
-            {console.log(game)}
+            {console.log(`Returned game: ${game}`)}
             <h1>TESTING</h1> 
         </>
     )
