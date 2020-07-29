@@ -40,8 +40,8 @@ export default function DetailsPage() {
     return (
         <>
             { getData()}
-                <p>
-                </p>    
+            <br></br><br></br><br></br>
+             <h2>{this.props.match.params.id}</h2>  
         </>
     )
 }
