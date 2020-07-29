@@ -35,20 +35,14 @@ export default function DetailsPage(props) {
               })
     }, [])
 
-    const getOverview = () =>{
-        try{
-            return game.description
-        } catch(err){
-            console.log(err)
-        }
-    }
-
     return (
         <>
             <br></br><br></br><br></br><br></br>
 
+            <image src={game.background_image}/>
+
             <h2>{game.name}</h2> 
-            
+
             <h3>{game.description_raw}</h3>
             {console.log(`Returned game: ${game.name}`)}
         </>
