@@ -37,7 +37,7 @@ export default function TrendingPage(){
             <GridList cols={3}>\
             { Object.values(games).map(game => (
                 <GridListTile key={games.id}>
-                    <Link to={`/games/${game.id}-${game.slug}`}>
+                    <Link to={`/games/${game.id}`}>
                         <Card>
                             <CardActionArea key={game.id}>
                                 <div>

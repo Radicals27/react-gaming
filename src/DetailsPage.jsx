@@ -43,6 +43,7 @@ export default function DetailsPage(props) {
             { getData()}
             <br></br><br></br><br></br><br></br>
             <h2>{id}</h2> 
+            {console.log(game)}
             <h1>TESTING</h1> 
         </>
     )
