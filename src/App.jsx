@@ -27,7 +27,7 @@ export default function App() {
                 <Switch>
                     <Route exact path='/' component={TrendingPage} />
                     {/* <Route exact path='/trending' component={TrendingPage}/> */}
-                    <Route exact path='/games/:id' render={() => <DetailsPage {...props} />} />
+                    <Route exact path='/games/:id' render={() => <DetailsPage />} />
                     <Route exact path='/login' component={Auth} />
                     <Route exact path='/mission' component={Mission} />
                 </Switch>
