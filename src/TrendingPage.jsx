@@ -134,6 +134,7 @@ export default function TrendingPage(){
         <div>
 
             <TrendingCarousel/>
+            <br></br>
             <div className="checkboxContainer">
                 {Object.keys(platforms).map(key => (
                     <label className="label">{key}
@@ -161,6 +162,7 @@ export default function TrendingPage(){
                     </label>
                 ))}
             </div>
+            <br></br><br></br><br></br><br></br><br></br>
             <Typography>
                 Trending games: 
             </Typography>

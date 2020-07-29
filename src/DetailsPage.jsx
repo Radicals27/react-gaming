@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import { Carousel } from 'react-responsive-carousel'
 
 export default function DetailsPage(props) {
     const [game, setGame] = useState({})
@@ -45,8 +46,9 @@ export default function DetailsPage(props) {
     return (
         <>
             <br></br><br></br><br></br><br></br>
-            
+
             <h2>{game.name}</h2> 
+            
             <h3>{game.description_raw}</h3>
             {console.log(`Returned game: ${game.name}`)}
         </>
