@@ -8,7 +8,7 @@ export default function DetailsPage() {
 
     const getData = () => {
         try{
-            axios.get(`https://react-gaming-backend.herokuapp.com/game/${id}`)
+            axios.get(`https://react-gaming-backend.herokuapp.com/games/${id}`)
             .then(g => {
                 console.log(g)
                 setGame(g)
