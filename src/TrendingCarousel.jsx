@@ -1,5 +1,4 @@
 import React, {useState, useCallback, useEffect} from 'react'
-import ReactDOM from 'react-dom'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 import Typography from '@material-ui/core/Typography'
@@ -31,7 +30,7 @@ export default function TrendingCarousel() {
         {Object.values(games).map(game => (
             <div>
               <Card>
-                <Card.Img classname="card-img-top" variant="top" src={game.background_image} />
+                <Card.Img classname="car-img-top" variant="top" src={game.background_image} />
               </Card>
                 <Typography>{game.name}</Typography>
             </div>
