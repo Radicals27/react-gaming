@@ -4,6 +4,9 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import TrendingCarousel from './TrendingCarousel'
 import { Link } from 'react-router-dom'
+import './styles/Carousel.css'
+// CHICKEN
+
 
 export default function TrendingPage(){
      //ALL games from the API, called once at start
@@ -191,16 +194,3 @@ export default function TrendingPage(){
         </div>
     )
 }
-
-// render(
-//     <GridList cols={3}>
-//       {nums.map(n => {
-//         return (
-//           <GridListTile key={n}>
-//             <Demo key={n} num={n} />
-//           </GridListTile>
-//         );
-//       })}
-//     </GridList>,
-//     rootElement
-//   );
