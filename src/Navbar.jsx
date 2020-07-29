@@ -79,9 +79,11 @@ export default function Navbar(props) {
                                 </div>
                             </>
                         ) : (
-                            <Button variant="contained" color="primary" onClick={event => window.location.href='/login'}>
-                                Register/Sign In
-                            </Button>
+                            <div className="logOut">
+                                <Button variant="contained" color="primary" onClick={event => window.location.href='/login'}>
+                                    Register/Sign In
+                                </Button>
+                            </div>
                         )}
                     </Toolbar>
                 </AppBar>
