@@ -83,7 +83,7 @@ export default function HomePageCard() {
                 }
             }
         }
-        console.log(gamesArray)
+        console.log(`Games array: ${gamesArray}`)
         for (let i = 0; i < games.length; i++) {
             //Go through each GENRE for the game
             for (let j = 0; j < games[i].genres.length; j++) {
