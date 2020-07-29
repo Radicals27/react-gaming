@@ -56,7 +56,7 @@ export default function Navbar(props) {
         <>
             {/* <CssBaseline /> */}
             <HideOnScroll {...props}>
-                <AppBar colour="secondary">
+                <AppBar style={{ background: '#7CFC00' }}>
                     <Toolbar>
                         <Typography variant="h6">REACT GAMING</Typography>
                         <Button variant="contained" color="primary" onClick={event => window.location.href='/'}>
