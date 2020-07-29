@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Basic from '../basic_test';
 import {TrendingPage} from './TrendingPage'
 import TestRenderer from 'react-test-renderer'
 import Enzyme, { shallow, render, mount } from 'enzyme'
