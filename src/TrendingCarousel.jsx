@@ -2,7 +2,7 @@ import React, {useState, useCallback, useEffect} from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 import Typography from '@material-ui/core/Typography'
-import {Container, Row, Col, Card} from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
 
 
 export default function TrendingCarousel() {
