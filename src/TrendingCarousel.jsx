@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 import Typography from '@material-ui/core/Typography'
+import {Container, Row, Col, Card} from 'react-bootstrap'
+
 
 export default function TrendingCarousel() {
     const [games, setGames] = useState([])
     const getRawgApi = useCallback(async () => {
         try {
-          // _RAWG game details call
+          // RAWG game trending call
           const response = await fetch(`https://react-gaming-backend.herokuapp.com/trending`)
           const json = await response.json()
           console.log(json.results)
@@ -28,7 +30,9 @@ export default function TrendingCarousel() {
         <Carousel showArrows={true}>
         {Object.values(games).map(game => (
             <div>
-                <img src={game.background_image} alt="atler"/>
+              <Card>
+                <Card.Img classname="card-img-top" variant="top" src={game.background_image} />
+              </Card>
                 <Typography>{game.name}</Typography>
             </div>
                 ))}
