@@ -39,7 +39,7 @@ useEffect(() => {
     return (
         <>
             <div className="search" style={ {zIndex: 1}}>
-                <Input onChange={setKeywordInInput} value={keyword} placeholder={"Chicken"}/>
+                <Input onChange={setKeywordInInput} value={keyword} placeholder={"Searcch for game"}/>
                 {dataIsReady ? (
                 <Fragment>
                     {dropdownIsopened ? (
