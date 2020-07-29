@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Carousel } from 'react-responsive-carousel'
+import {Container, Row, Col, Card} from 'react-bootstrap'
 
 export default function DetailsPage(props) {
     const [game, setGame] = useState({})
@@ -38,13 +39,28 @@ export default function DetailsPage(props) {
     return (
         <>
             <br></br><br></br><br></br><br></br>
+            <Container>
+                <Row xs={1} md={2}>
+                    <Col xs={12} md={8}>
+                        <Card>
+                            <Card.Img variant="top" src={game.backgroun_image} />
+                            <Card.Body>
+                                <Card.Title>{game.name}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col xs={6} md={4}>
+                        xs=6 md=4
+                    </Col>
+                </Row>
+                {/* <image src={game.background_image}/>
 
-            <image src={game.background_image}/>
+                <h2>{game.name}</h2> 
 
-            <h2>{game.name}</h2> 
-
-            <h3>{game.description_raw}</h3>
-            {console.log(`Returned game: ${game.name}`)}
+                <h3>{game.description_raw}</h3>
+                {console.log(`Returned game: ${game.name}`)} */}
+            </Container>
+            
         </>
     )
 }
