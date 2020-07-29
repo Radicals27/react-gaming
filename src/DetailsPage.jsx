@@ -24,12 +24,15 @@ export default function DetailsPage(props) {
     // }, [])
 
     useEffect(() => {
-        axios.get(`https://react-gaming-backend.herokuapp.com/games/${id}`)
+        axios.get(`https://api.rawg.io/api/games/${id}`)
             .then(game => {
                 console.log(game)
                 setGame(game.data)
             })
-    }, [id])
+            .catch(err => {
+                console.log(`error: ${error}`)
+              })
+    }, [])
 
     const getOverview = () =>{
         try{
