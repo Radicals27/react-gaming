@@ -30,26 +30,29 @@ export default function Navbar(props) {
     // Find out if a user is already logged in
     const [user, setUser] = useState(false)
     const [error, setError] = useState(false)
-    const url = "https://react-gaming-backend.herokuapp.com"
-    const frontEndUrl = "https://react-gaming.herokuapp.com"
 
     useEffect(() => {
-        axios.get(`${url}/users/me`, {
+        axios.get(`https://react-gaming-backend.herokuapp.com/users/me`, {
         withCredentials: true
         })
         .then(result => {
+            console.log(`User logged in: ${JSON.stringify(result)}`)
             setUser(result.data)
         })
-    }, [])
+        .catch(err => {
+            console.log(`Error: ${err}`)
+        })
+    }, [user])
 
     const handleLogOut = (e) => {
     e.preventDefault()
-    axios.get(`${url}/users/logout`, {
+    axios.get(`https://react-gaming-backend.herokuapp.com/users/logout`, {
         withCredentials: true
     })
         .then(() => {
-        setUser(false)
-        setError(false)
+            console.log(`User logged out`)
+            setUser(false)
+            setError(false)
         })
     }
     return (
@@ -74,9 +77,11 @@ export default function Navbar(props) {
                                 </div>
                             </>
                         ) : (
-                            <Button variant="contained" color="primary" onClick={event => window.location.href='/login'}>
-                                Register/Sign In
-                            </Button>
+                            <div className="logOut">
+                                <Button variant="contained" color="primary" onClick={event => window.location.href='/login'}>
+                                    Register/Sign In
+                                </Button>
+                            </div>
                         )}
                     </Toolbar>
                 </AppBar>
