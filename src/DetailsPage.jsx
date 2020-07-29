@@ -39,7 +39,7 @@ export default function DetailsPage(props) {
     return (
         <>
             <br></br><br></br><br></br><br></br>
-            <Container class="body">
+            {/* <Container class="body">
                 <Row xs={1} md={2}>
                     <Col xs={12} md={8}>
                         <Row>
@@ -54,14 +54,14 @@ export default function DetailsPage(props) {
                     <Col xs={6} md={4}>
                         {game.description_raw}
                     </Col>
-                </Row>
-                {/* <image src={game.background_image}/>
+                </Row> */}
+                <image src={game.background_image}></image>
 
                 <h2>{game.name}</h2> 
 
                 <h3>{game.description_raw}</h3>
                 {console.log(`Returned game: ${game.name}`)} */}
-            </Container>
+            {/* {/* </Container> */}
             
         </>
     )
