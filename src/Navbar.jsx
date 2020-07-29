@@ -30,11 +30,9 @@ export default function Navbar(props) {
     // Find out if a user is already logged in
     const [user, setUser] = useState(false)
     const [error, setError] = useState(false)
-    const url = "https://react-gaming-backend.herokuapp.com"
-    const frontEndUrl = "https://react-gaming.herokuapp.com"
 
     useEffect(() => {
-        axios.get(`${url}/users/me`, {
+        axios.get(`https://react-gaming-backend.herokuapp.com/users/me`, {
         withCredentials: true
         })
         .then(result => {
@@ -48,7 +46,7 @@ export default function Navbar(props) {
 
     const handleLogOut = (e) => {
     e.preventDefault()
-    axios.get(`${url}/users/logout`, {
+    axios.get(`https://react-gaming-backend.herokuapp.com/users/logout`, {
         withCredentials: true
     })
         .then(() => {
