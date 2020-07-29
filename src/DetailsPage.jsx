@@ -39,15 +39,17 @@ export default function DetailsPage(props) {
     return (
         <>
             <br></br><br></br><br></br><br></br>
-            <Container>
+            <Container class="body">
                 <Row xs={1} md={2}>
                     <Col xs={12} md={8}>
-                        <Card>
-                            <Card.Img classname="card-img-top" variant="top" src={game.background_image} />
-                            <Card.Body>
-                                <Card.Title>{game.name}</Card.Title>
-                            </Card.Body>
-                        </Card>
+                        <Row>
+                            <Card>
+                                <Card.Img classname="card-img-top" variant="top" src={game.background_image} />
+                                <Card.Body>
+                                    <Card.Title>{game.name}</Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </Row>
                     </Col>
                     <Col xs={6} md={4}>
                         {game.description_raw}
