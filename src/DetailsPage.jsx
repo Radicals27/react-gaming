@@ -14,6 +14,7 @@ export default function DetailsPage(props) {
                 setGame(g)
             })
         }catch(err){
+            console.log("Sorry, no luck!")
             console.error(err)
         }
     }
@@ -43,7 +44,7 @@ export default function DetailsPage(props) {
             { getData()}
             <br></br><br></br><br></br><br></br>
             <h2>{id}</h2> 
-            {console.log(`Returned game: ${game}`)}
+            {console.log(`Returned game: ${game.name}`)}
             <h1>TESTING</h1> 
         </>
     )
