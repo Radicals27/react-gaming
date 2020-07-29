@@ -126,17 +126,44 @@ export default function TrendingPage(){
             setGamesToDisplay(filterGames(games, platforms, genres))
         }
     })
-    
+
     return(
         <div>
 
             <TrendingCarousel/>
+            <div className="checkboxContainer">
+                {Object.keys(platforms).map(key => (
+                    <label className="label">{key}
+                        <input
+                            type="checkbox"
+                            onChange={handleTogglePlatform}
+                            key={key}
+                            name={key}
+                            checked={platforms[key]}
+                        />
+                    </label>
+
+                ))}
+            </div>
+            <div className="checkboxContainer">
+                {Object.keys(genres).map(key => (
+                    <label className="label">{key}
+                        <input
+                            type="checkbox"
+                            onChange={handleToggleGenre}
+                            key={key}
+                            name={key}
+                            checked={genres[key]}
+                        />
+                    </label>
+                ))}
+            </div>
             <Typography>
                 Trending games: 
             </Typography>
             <GridList cols={3}>\
-            { Object.values(games).map(game => (
-                <GridListTile key={games.id}>
+            { Object.values(gamesToDisplay).map(game => (
+                <GridListTile key={game.id}>
                     <Link to={`/games/${game.id}`}>
                         <Card>
                             <CardActionArea key={game.id}>
