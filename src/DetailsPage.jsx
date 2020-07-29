@@ -30,7 +30,7 @@ export default function DetailsPage(props) {
                 setGame(game.data)
             })
             .catch(err => {
-                console.log(`error: ${error}`)
+                console.log(`error: ${err}`)
               })
     }, [])
 
