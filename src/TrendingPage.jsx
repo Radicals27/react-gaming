@@ -36,7 +36,7 @@ export default function TrendingPage(){
             <GridList cols={3}>\
             { Object.values(games).map(game => (
                 <GridListTile key={games.id}>
-                    <Card onClick={event => window.location.href=`/games/${game.id}`}>
+                    <Card onClick={event => window.location.href=`/games/${game.id}-${game.slug}`}>
                         <CardActionArea key={game.id}>
                             <div>
                                 
