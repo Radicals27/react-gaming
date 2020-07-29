@@ -55,8 +55,9 @@ export default function DetailsPage(props) {
                         {game.description_raw}
                     </Col>
                 </Row> */}
-                <image src={game.background_image}></image>
-
+                <Card>
+                    <Card.Img classname="card-img-top" variant="top" src={game.background_image} />
+                </Card>
                 <h2>{game.name}</h2> 
 
                 <h3>{game.description_raw}</h3>
