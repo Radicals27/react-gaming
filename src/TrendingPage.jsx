@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import {Card, CardActionArea, CardContent, Grid, GridList, GridListTile} from '@material-ui/core'
+import {Card, CardActionArea, CardActions, CardContent, Grid, GridList, GridListTile} from '@material-ui/core'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import TrendingCarousel from './TrendingCarousel'
@@ -36,23 +36,25 @@ export default function TrendingPage(){
             <GridList cols={3}>\
             { Object.values(games).map(game => (
                 <GridListTile key={games.id}>
-                    <CardActionArea key={game.id}>
-                        <div>
-                            <CardMedia
-                                component="img"
-                                alt="Contemplative Reptile"
-                                height="140"
-                                image={game.background_image}
-                                title={game.name}
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    {game.name}
-                                </Typography>
-                        </CardContent>
-                    </div>
-                </CardActionArea>
-
+                    <Card onClick={event => window.location.href='/mission'}>
+                        <CardActionArea key={game.id}>
+                            <div>
+                                
+                                <CardMedia
+                                    component="img"
+                                    alt="Contemplative Reptile"
+                                    height="140"
+                                    image={game.background_image}
+                                    title={game.name}
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        {game.name}
+                                    </Typography>
+                            </CardContent>
+                        </div>
+                    </CardActionArea>
+                </Card>
                 </GridListTile>
                             ))}
             </GridList>
