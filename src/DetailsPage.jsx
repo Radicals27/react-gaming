@@ -5,6 +5,8 @@ import axios from 'axios'
 export default function DetailsPage(props) {
     const [game, setGame] = useState({})
     const id = props.match.params.id
+    const {myGame} = props.location.state
+    console.log(`My game: ${myGame}`)
 
     const getData = () => {
         try{
