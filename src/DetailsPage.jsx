@@ -50,7 +50,7 @@ export default function DetailsPage(props) {
                         </Card>
                     </Col>
                     <Col xs={6} md={4}>
-                        xs=6 md=4
+                        {game.description_raw}
                     </Col>
                 </Row>
                 {/* <image src={game.background_image}/>
