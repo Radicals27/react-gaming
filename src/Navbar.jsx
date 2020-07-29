@@ -38,7 +38,7 @@ export default function Navbar(props) {
         withCredentials: true
         })
         .then(result => {
-            console.log(`User logged in: ${result.data}`)
+            console.log(`User logged in: ${JSON.stringify(result.data)}`)
             setUser(result.data)
         })
         .catch(err => {
