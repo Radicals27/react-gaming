@@ -42,7 +42,7 @@ export default function Navbar(props) {
         .catch(err => {
             console.log(`Error: ${err}`)
         })
-    }, [])
+    }, [user])
 
     const handleLogOut = (e) => {
     e.preventDefault()
