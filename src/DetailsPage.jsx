@@ -34,17 +34,26 @@ export default function DetailsPage(props) {
 
                 <h3>{game.description_raw}</h3>
                 {console.log(`Returned game: ${game.name}`)}
-            { Object.values(game).map( g =>(
-                <div style={{ padding: `0 ${chevronWidth}px` }}>
+
+
+            { game.map( g =>(
+                <div style={{"padding":0,"maxWidth":"100%","margin":"0"}}>
                     <ItemsCarousel
-                    requestToChangeActive={setActiveItemIndex}
-                    activeItemIndex={activeItemIndex}
-                    numberOfCards={2}
-                    gutter={20}
-                    leftChevron={<button>{'<'}</button>}
-                    rightChevron={<button>{'>'}</button>}
-                    outsideChevron
-                    chevronWidth={chevronWidth}
+                        infiniteLoop={false}
+                        gutter={12}
+                        activePosition={'center'}
+                        chevronWidth={60}
+                        disableSwipe={false}
+                        alwaysShowChevrons={false}
+                        numberOfCards={3}
+                        slidesToScroll={3}
+                        outsideChevron={false}
+                        showSlither={false}
+                        firstAndLastGutter={false}
+                        activeItemIndex={this.state.activeItemIndex}
+                        requestToChangeActive={value => this.setState({ activeItemIndex: value })}
+                        rightChevron={'>'}
+                        leftChevron={'<'}
                     >
                         <div style={{ height: 200, background: '#EEE' }}>
                             <Card>
