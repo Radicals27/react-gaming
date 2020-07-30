@@ -44,7 +44,8 @@ export default function DetailsPage(props) {
 
                 <h3>{game.description_raw}</h3>
 
-                {console.log(`Returned game: ${game}`)}
+                {console.log(`Returned game:`)}
+                {console.log(game)}
             
         </>
     )
