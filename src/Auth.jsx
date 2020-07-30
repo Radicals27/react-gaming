@@ -15,8 +15,11 @@ export default function Auth() {
       withCredentials: true
     })
       .then(result => {
-        setUser(result.data)
+        // setUser(result.data)
+        console.log(`Result: ${result}`)
       })
+      .catch(err =>
+        console.log(`Error: ${err}`))
   }, [])
 
   const handleSignUp = (e) => {
