@@ -20,19 +20,6 @@ export default function DetailsPage(props) {
               })
     }, [])
 
-    useEffect(() => {
-        axios.get(`https://api.rawg.io/api/games/${id}/suggested`)
-            .then(suggested => {
-                console.log(suggested)
-                setGame(suggested)
-            })
-            .catch(err => {
-                console.log(`error: ${err}`)
-              })
-    }, [])
-
-
-
     return (
         
         <>
