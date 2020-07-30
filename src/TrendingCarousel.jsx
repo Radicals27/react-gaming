@@ -30,7 +30,7 @@ export default function TrendingCarousel() {
         {Object.values(games).map(game => (
             <div>
               <Card>
-                <Card.Img variant="top" src={game.background_image} />
+                <Card.Img classname="card-img-top" variant="top" src={game.background_image} />
               </Card>
                 <Typography>{game.name}</Typography>
             </div>

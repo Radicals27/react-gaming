@@ -1,4 +1,14 @@
 # REACT-Gaming:
+
+Frontend: https://github.com/BrieferCelery/react-gaming
+
+Backend: https://github.com/BrieferCelery/backend 
+
+Livesite: https://react-gaming.herokuapp.com/
+
+Backend api: https://react-gaming-backend.herokuapp.com/
+
+
  
 ## Purpose
 To inform gamers of upcoming and released games (PC, Console & handheld) that might appeal to them based on their interests.
