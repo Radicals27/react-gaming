@@ -36,7 +36,7 @@ export default function DetailsPage(props) {
                 {console.log(`Returned game: ${game.name}`)}
 
 
-            { game.map( g =>(
+            { Object.values(game).map( g =>(
                 <div style={{"padding":0,"maxWidth":"100%","margin":"0"}}>
                     <ItemsCarousel
                         infiniteLoop={false}
@@ -57,7 +57,9 @@ export default function DetailsPage(props) {
                     >
                         <div style={{ height: 200, background: '#EEE' }}>
                             <Card>
-                                {g.tags.image_background}
+                                <Card.Img>
+                                    {g.tags.image_background}
+                                </Card.Img>
                             </Card>
                         </div>
                     </ItemsCarousel>
