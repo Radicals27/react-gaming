@@ -9,7 +9,7 @@ export default function DetailsPage(props) {
     const [game, setGame] = useState({})
     const id = props.match.params.id
     const [activeItemIndex, setActiveItemIndex] = useState(0)
-    const chevronWidth = 40
+    const chevronWidth = 10
     useEffect(() => {
         axios.get(`https://api.rawg.io/api/games/${id}`)
             .then(game => {
@@ -36,21 +36,22 @@ export default function DetailsPage(props) {
                 {console.log(`Returned game: ${game.name}`)}
             { Object.values(game).map( g =>(
                 <div style={{ padding: `0 ${chevronWidth}px` }}>
-                <ItemsCarousel
-                  requestToChangeActive={setActiveItemIndex}
-                  activeItemIndex={activeItemIndex}
-                  numberOfCards={2}
-                  gutter={20}
-                  leftChevron={<button>{'<'}</button>}
-                  rightChevron={<button>{'>'}</button>}
-                  outsideChevron
-                  chevronWidth={chevronWidth}
-                >
-                  <div style={{ height: 200, background: '#EEE' }}>First card</div>
-                  <div style={{ height: 200, background: '#EEE' }}>Second card</div>
-                  <div style={{ height: 200, background: '#EEE' }}>Third card</div>
-                  <div style={{ height: 200, background: '#EEE' }}>Fourth card</div>
-                </ItemsCarousel>
+                    <ItemsCarousel
+                    requestToChangeActive={setActiveItemIndex}
+                    activeItemIndex={activeItemIndex}
+                    numberOfCards={2}
+                    gutter={20}
+                    leftChevron={<button>{'<'}</button>}
+                    rightChevron={<button>{'>'}</button>}
+                    outsideChevron
+                    chevronWidth={chevronWidth}
+                    >
+                        <div style={{ height: 200, background: '#EEE' }}>
+                            <Card>
+                                {g.tags.image_background}
+                            </Card>
+                        </div>
+                    </ItemsCarousel>
                 </div>
             ))}
             
