@@ -26,7 +26,7 @@ function HideOnScroll(props) {
     )
 }
 
-export default function Navbar({user, setUser}) {
+export default function Navbar(props) {
     // Find out if a user is already logged in
     const [error, setError] = useState(false)
 
@@ -36,7 +36,7 @@ export default function Navbar({user, setUser}) {
         })
         .then(result => {
             console.log(`User logged in: ${JSON.stringify(result)}`)
-            setUser(result.data)
+            props.setUser(result.data)
         })
         .catch(err => {
             console.log(`Error: ${err}`)
@@ -50,7 +50,7 @@ export default function Navbar({user, setUser}) {
     })
         .then(() => {
             console.log(`User logged out`)
-            setUser(false)
+            props.setUser(false)
             setError(false)
         })
     }
@@ -68,9 +68,9 @@ export default function Navbar({user, setUser}) {
                             Our Mission
                         </Button>
                         <Search />
-                        {user ? (
+                        {props.user ? (
                             <>
-                                <h5>Logged in as {user.displayName || user.username}</h5>
+                                <h5>Logged in as {props.user.displayName || props.user.username}</h5>
                                 <div className="logOut">
                                     <Button variant="contained" color="primary" onClick={handleLogOut}>Log Out</Button>
                                 </div>
