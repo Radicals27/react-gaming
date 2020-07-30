@@ -1,30 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import { Carousel } from 'react-responsive-carousel'
-import {Container, Row, Col, Card} from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
+import ItemsCarousel from 'react-items-carousel';
+
 
 export default function DetailsPage(props) {
     const [game, setGame] = useState({})
     const id = props.match.params.id
-
-    // const getData = () => {
-    //     try{
-    //         axios.get(`https://react-gaming-backend.herokuapp.com/games/${id}`)
-    //         .then(g => {
-    //             console.log(`getData Game: ${g}`)
-    //             setGame(g)
-    //         })
-    //     }catch(err){
-    //         console.log("Sorry, no luck!")
-    //         console.error(err)
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getData()
-    // }, [])
-
+    const [activeItemIndex, setActiveItemIndex] = useState(0)
+    const chevronWidth = 40
     useEffect(() => {
         axios.get(`https://api.rawg.io/api/games/${id}`)
             .then(game => {
@@ -36,7 +21,10 @@ export default function DetailsPage(props) {
               })
     }, [])
 
+
+
     return (
+        
         <>
             <br></br><br></br><br></br><br></br>
                 <Card>
@@ -46,6 +34,26 @@ export default function DetailsPage(props) {
 
                 <h3>{game.description_raw}</h3>
                 {console.log(`Returned game: ${game.name}`)}
+            { Object.values(game).map( g =>(
+                <div style={{ padding: `0 ${chevronWidth}px` }}>
+                <ItemsCarousel
+                  requestToChangeActive={setActiveItemIndex}
+                  activeItemIndex={activeItemIndex}
+                  numberOfCards={2}
+                  gutter={20}
+                  leftChevron={<button>{'<'}</button>}
+                  rightChevron={<button>{'>'}</button>}
+                  outsideChevron
+                  chevronWidth={chevronWidth}
+                >
+                  <div style={{ height: 200, background: '#EEE' }}>First card</div>
+                  <div style={{ height: 200, background: '#EEE' }}>Second card</div>
+                  <div style={{ height: 200, background: '#EEE' }}>Third card</div>
+                  <div style={{ height: 200, background: '#EEE' }}>Fourth card</div>
+                </ItemsCarousel>
+                </div>
+            ))}
+            
         </>
     )
 }
