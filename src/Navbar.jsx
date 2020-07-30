@@ -57,7 +57,6 @@ export default function Navbar(props) {
     }
     return (
         <>
-            {/* <CssBaseline /> */}
             <HideOnScroll {...props}>
                 <AppBar style={{ background: '#006400' }}>
                     <Toolbar>
@@ -86,8 +85,6 @@ export default function Navbar(props) {
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>
-            {/* <Toolbar /> */}
-
         </>
     )
 }

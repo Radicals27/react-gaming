@@ -20,14 +20,10 @@ export default function App() {
     return (
         <div className="App-header">
             <CookieBar/>
-            {/* <Auth /> */}
             <Navbar user={user} setUser={setUser}/>
-            {/* <TrendingPage/> */}
-            {/* <DetailsPage/> */}
             <BrowserRouter>
                 <Switch>
                     <Route exact path='/' component={TrendingPage} />
-                    {/* <Route exact path='/trending' component={TrendingPage}/> */}
                     <Route exact path='/games/:id' render={(props) => <DetailsPage {...props} />} />
                     <Route exact path='/login' component={Auth} />
                     <Route exact path='/mission' component={Mission} />

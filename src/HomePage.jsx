@@ -1,12 +1,7 @@
 import React from 'react'
-//import axios from 'axios'
-
 import { makeStyles } from '@material-ui/core/styles';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-//import {Carousel} from 'react-responsive-carousel'
-//import GridLayout from 'react-grid-layout'
 import Grid from '@material-ui/core/Grid';
-
 import HomePageCard from './HomePageCard'
 
 const useStyles = makeStyles((theme) => ({
