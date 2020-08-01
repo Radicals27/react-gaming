@@ -1,8 +1,8 @@
 # REACT-Gaming:
 
-Frontend: https://github.com/BrieferCelery/react-gaming
+Frontend: https://github.com/Radicals27/react-gaming
 
-Backend: https://github.com/BrieferCelery/backend 
+Backend: https://github.com/Radicals27/backend 
 
 Livesite: https://react-gaming.herokuapp.com/
 
@@ -58,16 +58,3 @@ https://trello.com/b/aRXRFprr/react-gaming
 Screenshots:
 
 ![Trello Image 1](docs/Trello01.png)
-
-## Testing
-
-We used Survey Monkey to test the production side of our website and received the following responses:
-
-![Testing Image 1](docs/01.PNG)
-![Testing Image 2](docs/02.PNG)
-![Testing Image 3](docs/03.PNG)
-![Testing Image 4](docs/04.PNG)
-![Testing Image 5](docs/05.PNG)
-![Testing Image 6](docs/06.PNG)
-![Testing Image 7](docs/07.PNG)
-![Testing Image 8](docs/08.PNG)
